@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- 2. 有背景顏色的文字佈局 -->
 <TextView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/tvItemText"
+    android:id="@+id/tvColor"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingStart="16dp"
-    android:paddingVertical="8dp" />
+    android:background="#FFEAEB"
+    android:padding="12dp" />

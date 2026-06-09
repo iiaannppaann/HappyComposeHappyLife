@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- 3. 斜體字型的文字佈局 -->
 <TextView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/tvHeaderTitle"
+    android:id="@+id/tvItalic"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingVertical="12dp" />
+    android:textStyle="italic"
+    android:padding="12dp" />
