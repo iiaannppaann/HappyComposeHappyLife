@@ -10,5 +10,6 @@ data class NestedDemoUiState(
     val level7: String = "第 7 層 — 編譯器優化團隊",
     val level8: String = "第 8 層 — 指令集適配小組",
     val level9: String = "第 9 層 — 核心硬體橋接組",
-    val level10: String = "第 10 層 — 核心硬體暫存器優化工程師：林工程師"
+    val level10: String = "第 10 層 — 核心硬體暫存器優化工程師：林工程師",
+    val stressResult: String = ""
 )

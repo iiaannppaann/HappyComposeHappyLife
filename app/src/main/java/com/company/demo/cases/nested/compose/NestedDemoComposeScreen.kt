@@ -2,27 +2,59 @@ package com.company.demo.cases.nested.compose
 
 import com.company.demo.cases.nested.mvi.NestedDemoUiState
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun NestedDemoComposeScreen(uiState: NestedDemoUiState) {
+fun NestedDemoComposeScreen(
+    uiState: NestedDemoUiState,
+    onTriggerStressTest: (Int, Long) -> Unit
+) {
     Column(
         modifier = Modifier
             .fillMaxSize()
             .padding(16.dp)
             .verticalScroll(rememberScrollState())
     ) {
-        // 在 Compose 中，使用 10 層 Column 模擬一樣的巢狀深度做效能比對。
-        // 得益於 Compose 的 O(N) 單次測量限制（Single Pass Measurement），
-        // 即使層級再深，也不會發生傳統 XML 佈局中的指數級二次測量效能重災，依然能保持流暢。
-        
+        // Compose 壓測按鈕
+        Button(
+            onClick = {
+                val startTime = System.currentTimeMillis()
+                
+                // 1. 同樣進行 5000 次連續的高頻狀態變更
+                for (i in 1..5000) {
+                    onTriggerStressTest(i, 0)
+                }
+                
+                // 2. 測量最後一刻的總耗時
+                val duration = System.currentTimeMillis() - startTime
+                onTriggerStressTest(5000, duration)
+            },
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            Text(text = "開始高頻率重繪壓測（5000次）")
+        }
+
+        if (uiState.stressResult.isNotEmpty()) {
+            Text(
+                text = uiState.stressResult,
+                modifier = Modifier.padding(top = 8.dp, bottom = 16.dp)
+            )
+        } else {
+            Spacer(modifier = Modifier.height(16.dp))
+        }
+
+        // 10層巢狀 Column
         // Level 1
         Text(text = uiState.level1, modifier = Modifier.padding(bottom = 8.dp))
         

@@ -3,7 +3,7 @@ package com.company.demo.cases.nested.compose
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
+import         android.view.ViewGroup
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.platform.ComposeView
@@ -23,7 +23,12 @@ class NestedDemoComposeFragment : Fragment() {
         return ComposeView(requireContext()).apply {
             setContent {
                 val uiState by viewModel.uiState.collectAsState()
-                NestedDemoComposeScreen(uiState = uiState)
+                NestedDemoComposeScreen(
+                    uiState = uiState,
+                    onTriggerStressTest = { value, duration ->
+                        viewModel.updateStressValue(value, duration)
+                    }
+                )
             }
         }
     }

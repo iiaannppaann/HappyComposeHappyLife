@@ -5,6 +5,20 @@
     android:orientation="vertical"
     android:padding="16dp">
 
+    <!-- 壓測控制項 -->
+    <Button
+        android:id="@+id/btnStressTest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="開始高頻率重繪壓測（5000次）" />
+
+    <TextView
+        android:id="@+id/tvStressResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp" />
+
     <!-- 10層巢狀 LinearLayout 效能重災區展示 -->
     <!-- Level 1 -->
     <LinearLayout
