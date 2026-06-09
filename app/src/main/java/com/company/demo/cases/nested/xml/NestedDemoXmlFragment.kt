@@ -31,11 +31,17 @@ class NestedDemoXmlFragment : Fragment() {
 
         viewLifecycleOwner.lifecycleScope.launch {
             viewModel.uiState.collectLatest { state ->
-                binding.tvDepartment.text = state.department
-                binding.tvTeam.text = state.team
-                binding.tvGroup.text = state.group
-                binding.tvRole.text = state.role
-                binding.tvName.text = state.name
+                // 將 10 層資料各自綁定到 10 層巢狀 LinearLayout 中的 TextView 上
+                binding.tvLevel1.text = state.level1
+                binding.tvLevel2.text = state.level2
+                binding.tvLevel3.text = state.level3
+                binding.tvLevel4.text = state.level4
+                binding.tvLevel5.text = state.level5
+                binding.tvLevel6.text = state.level6
+                binding.tvLevel7.text = state.level7
+                binding.tvLevel8.text = state.level8
+                binding.tvLevel9.text = state.level9
+                binding.tvLevel10.text = state.level10
             }
         }
     }

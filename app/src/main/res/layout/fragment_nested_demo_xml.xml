@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:padding="16dp">
 
-    <!-- Deeply nested LinearLayouts representing the hierarchy with indentation margins -->
+    <!-- 10層巢狀 LinearLayout 效能重災區展示 -->
     <!-- Level 1 -->
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,9 +13,10 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/tvDepartment"
+            android:id="@+id/tvLevel1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp" />
 
         <!-- Level 2 -->
         <LinearLayout
@@ -25,9 +26,10 @@
             android:layout_marginStart="16dp">
 
             <TextView
-                android:id="@+id/tvTeam"
+                android:id="@+id/tvLevel2"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp" />
 
             <!-- Level 3 -->
             <LinearLayout
@@ -37,9 +39,10 @@
                 android:layout_marginStart="16dp">
 
                 <TextView
-                    android:id="@+id/tvGroup"
+                    android:id="@+id/tvLevel3"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp" />
 
                 <!-- Level 4 -->
                 <LinearLayout
@@ -49,9 +52,10 @@
                     android:layout_marginStart="16dp">
 
                     <TextView
-                        android:id="@+id/tvRole"
+                        android:id="@+id/tvLevel4"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp" />
 
                     <!-- Level 5 -->
                     <LinearLayout
@@ -61,10 +65,81 @@
                         android:layout_marginStart="16dp">
 
                         <TextView
-                            android:id="@+id/tvName"
+                            android:id="@+id/tvLevel5"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp" />
 
+                        <!-- Level 6 -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginStart="16dp">
+
+                            <TextView
+                                android:id="@+id/tvLevel6"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp" />
+
+                            <!-- Level 7 -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:layout_marginStart="16dp">
+
+                                <TextView
+                                    android:id="@+id/tvLevel7"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="8dp" />
+
+                                <!-- Level 8 -->
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:layout_marginStart="16dp">
+
+                                    <TextView
+                                        android:id="@+id/tvLevel8"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="8dp" />
+
+                                    <!-- Level 9 -->
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical"
+                                        android:layout_marginStart="16dp">
+
+                                        <TextView
+                                            android:id="@+id/tvLevel9"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="8dp" />
+
+                                        <!-- Level 10 -->
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="vertical"
+                                            android:layout_marginStart="16dp">
+
+                                            <TextView
+                                                android:id="@+id/tvLevel10"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginBottom="8dp" />
+
+                                        </LinearLayout>
+                                    </LinearLayout>
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
