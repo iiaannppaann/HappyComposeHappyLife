@@ -8,6 +8,8 @@ import androidx.fragment.app.Fragment
 import com.company.demo.R
 import com.company.demo.cases.background.compose.BackgroundDemoComposeFragment
 import com.company.demo.cases.background.xml.BackgroundDemoXmlFragment
+import com.company.demo.cases.nested.compose.NestedDemoComposeFragment
+import com.company.demo.cases.nested.xml.NestedDemoXmlFragment
 import com.company.demo.core.DemoCase
 import com.company.demo.databinding.FragmentMainMenuBinding
 
@@ -33,8 +35,11 @@ class MainMenuFragment : Fragment() {
         binding.btnBackgroundCompose.setOnClickListener {
             navigateToFragment(BackgroundDemoComposeFragment())
         }
-        binding.cardNested.setOnClickListener {
-            navigateToCase(DemoCase.NESTED_COMPOSE)
+        binding.btnNestedXml.setOnClickListener {
+            navigateToFragment(NestedDemoXmlFragment())
+        }
+        binding.btnNestedCompose.setOnClickListener {
+            navigateToFragment(NestedDemoComposeFragment())
         }
         binding.cardForm.setOnClickListener {
             navigateToCase(DemoCase.FORM_COMPOSE)
