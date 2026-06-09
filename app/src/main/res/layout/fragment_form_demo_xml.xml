@@ -1,76 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:fillViewport="true">
 
-    <com.google.android.material.appbar.AppBarLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
 
-        <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/toolbar"
+        <!-- 動態欄位容器。在 legacy XML 中，我們必須透過手動 addView 和 removeView 在此容器中操作子視圖 -->
+        <LinearLayout
+            android:id="@+id/llDynamicFieldsContainer"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimaryContainer"
-            app:title="Dynamic Form (XML)"
-            app:titleTextColor="?attr/colorOnPrimaryContainer"
-            app:navigationIconTint="?attr/colorOnPrimaryContainer" />
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
 
-    </com.google.android.material.appbar.AppBarLayout>
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fillViewport="true">
+        <Spacer
+            android:layout_width="match_parent"
+            android:layout_height="16dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp">
-
-            <TextView
-                android:id="@+id/tvLabel1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-            <EditText
-                android:id="@+id/etField1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="12dp"
-                android:importantForAutofill="no"
-                android:inputType="textPersonName" />
-
-            <TextView
-                android:id="@+id/tvLabel2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-            <EditText
-                android:id="@+id/etField2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="12dp"
-                android:importantForAutofill="no"
-                android:inputType="textEmailAddress" />
+            android:orientation="horizontal">
 
             <Button
-                android:id="@+id/btnSubmit"
-                android:layout_width="match_parent"
+                android:id="@+id/btnAddField"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="送出" />
+                android:layout_weight="1"
+                android:text="新增欄位" />
 
-            <TextView
-                android:id="@+id/tvSubmitResult"
-                android:layout_width="match_parent"
+            <Spacer
+                android:layout_width="8dp"
+                android:layout_height="match_parent" />
+
+            <Button
+                android:id="@+id/btnRemoveField"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp" />
+                android:layout_weight="1"
+                android:text="移除欄位" />
 
         </LinearLayout>
-    </ScrollView>
 
-</LinearLayout>
+        <Spacer
+            android:layout_width="match_parent"
+            android:layout_height="12dp" />
+
+        <Button
+            android:id="@+id/btnSubmit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="送出" />
+
+        <TextView
+            android:id="@+id/tvSubmitResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp" />
+
+    </LinearLayout>
+</ScrollView>
