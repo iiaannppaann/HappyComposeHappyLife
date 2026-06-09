@@ -34,21 +34,13 @@ fun BackgroundDemoComposeScreen(uiState: BackgroundDemoUiState) {
             .verticalScroll(rememberScrollState())
     ) {
         Text(
-            text = "Compose 版本",
-            style = MaterialTheme.typography.titleLarge,
-            color = MaterialTheme.colorScheme.primary,
-            modifier = Modifier.padding(bottom = 8.dp)
-        )
-        Text(
             text = "每張卡片的背景、邊框與圓角皆直接從 UiState 資料中使用 Modifier 單行程式碼動態渲染。無需任何外部 XML drawable 檔案！",
-            style = MaterialTheme.typography.bodyMedium,
             modifier = Modifier.padding(bottom = 24.dp)
         )
 
         uiState.cards.forEach { card ->
             val bgCol = runCatching { Color(card.backgroundColorHex.toColorInt()) }.getOrDefault(Color.Gray)
             val borderCol = runCatching { Color(card.borderColorHex.toColorInt()) }.getOrDefault(Color.Transparent)
-            val textCol = runCatching { Color(card.textColorHex.toColorInt()) }.getOrDefault(Color.Black)
 
             Box(
                 modifier = Modifier
@@ -68,21 +60,9 @@ fun BackgroundDemoComposeScreen(uiState: BackgroundDemoUiState) {
             ) {
                 Text(
                     text = card.text,
-                    color = textCol,
-                    style = MaterialTheme.typography.bodyLarge,
-                    fontWeight = FontWeight.Bold,
                     textAlign = TextAlign.Center
                 )
             }
         }
-        
-        Spacer(modifier = Modifier.height(24.dp))
-        Text(
-            text = "背景的 Compose 程式碼片段：\nModifier.clip(RoundedCornerShape(radius)).background(color)",
-            style = MaterialTheme.typography.labelSmall,
-            color = Color.Gray,
-            modifier = Modifier.fillMaxWidth(),
-            textAlign = TextAlign.Center
-        )
     }
 }

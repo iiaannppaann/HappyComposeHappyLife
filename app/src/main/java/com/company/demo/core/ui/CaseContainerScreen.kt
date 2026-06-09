@@ -52,8 +52,6 @@ fun CaseContainerScreen(
             ) {
                 Text(
                     text = "${demoCase.title} is currently under construction.\n\nComing soon in next Phase!",
-                    style = MaterialTheme.typography.bodyLarge,
-                    color = MaterialTheme.colorScheme.outline,
                     textAlign = androidx.compose.ui.text.style.TextAlign.Center
                 )
             }

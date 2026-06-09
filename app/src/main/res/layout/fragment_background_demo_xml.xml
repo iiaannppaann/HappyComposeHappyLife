@@ -37,18 +37,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Android XML 版本"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:textColor="@color/purple_500"
-                android:paddingBottom="8dp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:text="需要多個外部 XML background drawable 檔案來設定簡單的圓角與邊框，或者需要大量程式化的 GradientDrawable 樣板程式碼來達成動態樣式。"
-                android:textSize="14sp"
-                android:textColor="#FF555555"
                 android:paddingBottom="24dp" />
 
             <!-- 卡片 1 -->
@@ -61,10 +50,7 @@
                 android:gravity="center"
                 android:paddingHorizontal="24dp"
                 android:paddingVertical="16dp"
-                android:text="經典圓角按鈕"
-                android:textColor="@color/white"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+                android:text="經典圓角按鈕" />
 
             <!-- 卡片 2 -->
             <TextView
@@ -76,19 +62,7 @@
                 android:gravity="center"
                 android:paddingHorizontal="24dp"
                 android:paddingVertical="16dp"
-                android:text="藥丸形外框按鈕"
-                android:textColor="@color/teal_700"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:gravity="center"
-                android:text="請查看 res/drawable 資料夾，了解這些背景所需的 XML drawable 檔案！"
-                android:textSize="12sp"
-                android:textColor="#888888" />
+                android:text="藥丸形外框按鈕" />
 
         </LinearLayout>
     </ScrollView>

@@ -15,18 +15,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="HappyCompose vs Android XML"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:textColor="@color/purple_500"
-            android:paddingBottom="4dp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:text="Pick a VS case to compare Jetpack Compose and legacy Android XML layouts side-by-side:"
-            android:textSize="14sp"
-            android:textColor="#FF555555"
             android:paddingBottom="16dp" />
 
         <!-- Case 1 Card -->
@@ -48,18 +37,13 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Drawable Explosion"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/purple_500" />
+                    android:text="Drawable Explosion" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
-                    android:text="Comparing XML background drawable files to Compose inline modifiers"
-                    android:textSize="14sp"
-                    android:textColor="#FF333333" />
+                    android:text="Comparing XML background drawable files to Compose inline modifiers" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -109,18 +93,13 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Nested Layout Penalty"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/purple_500" />
+                    android:text="Nested Layout Penalty" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
-                    android:text="Demonstrating layout measurement overhead in deeply nested hierarchies"
-                    android:textSize="14sp"
-                    android:textColor="#FF333333" />
+                    android:text="Demonstrating layout measurement overhead in deeply nested hierarchies" />
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
@@ -143,18 +122,13 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Dynamic Form Generation"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/purple_500" />
+                    android:text="Dynamic Form Generation" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
-                    android:text="Creating dynamic inputs from state without manual view instantiation or ID tracking"
-                    android:textSize="14sp"
-                    android:textColor="#FF333333" />
+                    android:text="Creating dynamic inputs from state without manual view instantiation or ID tracking" />
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
@@ -177,18 +151,13 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Multi-Type List"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/purple_500" />
+                    android:text="Multi-Type List" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
-                    android:text="Contrasting RecyclerView Adapter boilerplate with declarative LazyColumn"
-                    android:textSize="14sp"
-                    android:textColor="#FF333333" />
+                    android:text="Contrasting RecyclerView Adapter boilerplate with declarative LazyColumn" />
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
@@ -211,18 +180,13 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Stateful Loading Button"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/purple_500" />
+                    android:text="Stateful Loading Button" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
-                    android:text="Creating a self-contained loading button with reactive visual changes"
-                    android:textSize="14sp"
-                    android:textColor="#FF333333" />
+                    android:text="Creating a self-contained loading button with reactive visual changes" />
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
@@ -245,18 +209,13 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Interoperability Showcase"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/purple_500" />
+                    android:text="Interoperability Showcase" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
-                    android:text="Demonstrating side-by-side coexistence of XML and Compose components"
-                    android:textSize="14sp"
-                    android:textColor="#FF333333" />
+                    android:text="Demonstrating side-by-side coexistence of XML and Compose components" />
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
@@ -279,18 +238,13 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Tabs &amp; ViewPager"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/purple_500" />
+                    android:text="Tabs &amp; ViewPager" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
-                    android:text="Implementing the classic TabLayout + ViewPager pattern easily in Compose"
-                    android:textSize="14sp"
-                    android:textColor="#FF333333" />
+                    android:text="Implementing the classic TabLayout + ViewPager pattern easily in Compose" />
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
