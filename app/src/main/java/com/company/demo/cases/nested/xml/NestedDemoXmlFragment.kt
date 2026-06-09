@@ -39,15 +39,6 @@ class NestedDemoXmlFragment : Fragment() {
                 
                 for (i in 1..5000) {
                     binding.tvLevel10.text = "【第 10 層】壓測次數: $i"
-                    
-                    // 【效能致命關鍵】：在 10 層 LinearLayout 嵌套下，每一次手動調用 measure & layout 
-                    // 都會強制整個佈局樹自上而下進行指數級的測量與排版，5000 次連續的同步操作
-                    // 會直接阻塞 Android 主執行緒（UI Thread）長達數秒，從而引起嚴重的畫面凍結甚至 ANR！
-                    binding.root.measure(
-                        View.MeasureSpec.makeMeasureSpec(binding.root.width, View.MeasureSpec.EXACTLY),
-                        View.MeasureSpec.makeMeasureSpec(binding.root.height, View.MeasureSpec.EXACTLY)
-                    )
-                    binding.root.layout(binding.root.left, binding.root.top, binding.root.right, binding.root.bottom)
                 }
                 
                 val duration = System.currentTimeMillis() - startTime
