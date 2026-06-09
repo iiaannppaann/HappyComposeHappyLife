@@ -156,6 +156,33 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:text="Creating dynamic inputs from state without manual view instantiation or ID tracking" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="12dp"
+                    android:gravity="end">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnFormXml"
+                        style="@style/Widget.Material3.Button.OutlinedButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="XML Version"
+                        android:textSize="12sp"/>
+
+                    <View
+                        android:layout_width="8dp"
+                        android:layout_height="match_parent"/>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnFormCompose"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Compose Version"
+                        android:textSize="12sp"/>
+                </LinearLayout>
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
