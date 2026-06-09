@@ -12,6 +12,8 @@ import com.company.demo.cases.nested.compose.NestedDemoComposeFragment
 import com.company.demo.cases.nested.xml.NestedDemoXmlFragment
 import com.company.demo.cases.form.compose.FormDemoComposeFragment
 import com.company.demo.cases.form.xml.FormDemoXmlFragment
+import com.company.demo.cases.multitype.compose.MultiTypeComposeFragment
+import com.company.demo.cases.multitype.xml.MultiTypeXmlFragment
 import com.company.demo.core.DemoCase
 import com.company.demo.databinding.FragmentMainMenuBinding
 
@@ -49,8 +51,11 @@ class MainMenuFragment : Fragment() {
         binding.btnFormCompose.setOnClickListener {
             navigateToFragment(FormDemoComposeFragment())
         }
-        binding.cardMultiType.setOnClickListener {
-            navigateToCase(DemoCase.MULTI_TYPE_COMPOSE)
+        binding.btnMultiTypeXml.setOnClickListener {
+            navigateToFragment(MultiTypeXmlFragment())
+        }
+        binding.btnMultiTypeCompose.setOnClickListener {
+            navigateToFragment(MultiTypeComposeFragment())
         }
         binding.cardStatefulButton.setOnClickListener {
             navigateToCase(DemoCase.STATEFUL_BUTTON_COMPOSE)
