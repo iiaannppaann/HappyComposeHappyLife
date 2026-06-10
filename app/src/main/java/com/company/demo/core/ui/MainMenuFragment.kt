@@ -22,6 +22,8 @@ import com.company.demo.cases.tabs.compose.TabsComposeFragment
 import com.company.demo.cases.tabs.xml.TabsXmlFragment
 import com.company.demo.core.DemoCase
 import com.company.demo.databinding.FragmentMainMenuBinding
+import com.company.demo.getBrowserIntent
+import com.airbnb.android.showkase.models.Showkase
 
 class MainMenuFragment : Fragment() {
 
@@ -80,6 +82,10 @@ class MainMenuFragment : Fragment() {
         }
         binding.btnClassicCompose.setOnClickListener {
             navigateToFragment(TabsComposeFragment())
+        }
+        binding.btnLaunchShowkase.setOnClickListener {
+            val intent = Showkase.getBrowserIntent(requireContext())
+            startActivity(intent)
         }
     }
 

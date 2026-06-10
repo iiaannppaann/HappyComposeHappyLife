@@ -96,7 +96,7 @@ fun CustomViewDemoComposeScreen(
 
 @Preview(showBackground = true, name = "1. Idle State")
 @Composable
-private fun PreviewStatefulLoadingButton_Idle() {
+fun PreviewStatefulLoadingButton_Idle() {
     MaterialTheme {
         Surface(modifier = Modifier.padding(16.dp)) {
             StatefulLoadingButton(
@@ -110,7 +110,7 @@ private fun PreviewStatefulLoadingButton_Idle() {
 
 @Preview(showBackground = true, name = "2. Loading State")
 @Composable
-private fun PreviewStatefulLoadingButton_Loading() {
+fun PreviewStatefulLoadingButton_Loading() {
     MaterialTheme {
         Surface(modifier = Modifier.padding(16.dp)) {
             StatefulLoadingButton(
@@ -124,7 +124,7 @@ private fun PreviewStatefulLoadingButton_Loading() {
 
 @Preview(showBackground = true, name = "3. Success State")
 @Composable
-private fun PreviewStatefulLoadingButton_Success() {
+fun PreviewStatefulLoadingButton_Success() {
     MaterialTheme {
         Surface(modifier = Modifier.padding(16.dp)) {
             StatefulLoadingButton(

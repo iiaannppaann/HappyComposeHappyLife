@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.ksp)
 }
 
 android {
@@ -69,7 +70,7 @@ dependencies {
 
     // Showkase
     implementation(libs.showkase)
-    annotationProcessor(libs.showkase.processor)
+    ksp(libs.showkase.processor)
 
     // Testing
     testImplementation(libs.junit)
