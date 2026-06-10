@@ -14,8 +14,8 @@ import com.company.demo.cases.form.compose.FormDemoComposeFragment
 import com.company.demo.cases.form.xml.FormDemoXmlFragment
 import com.company.demo.cases.multitype.compose.MultiTypeComposeFragment
 import com.company.demo.cases.multitype.xml.MultiTypeXmlFragment
-import com.company.demo.cases.button.compose.ButtonComposeFragment
-import com.company.demo.cases.button.xml.ButtonXmlFragment
+import com.company.demo.cases.customview.compose.CustomViewDemoComposeFragment
+import com.company.demo.cases.customview.xml.CustomViewDemoXmlFragment
 import com.company.demo.cases.interop.compose.InteropComposeFragment
 import com.company.demo.cases.interop.xml.InteropXmlFragment
 import com.company.demo.cases.tabs.compose.TabsComposeFragment
@@ -64,10 +64,10 @@ class MainMenuFragment : Fragment() {
             navigateToFragment(MultiTypeComposeFragment())
         }
         binding.btnStatefulButtonXml.setOnClickListener {
-            navigateToFragment(ButtonXmlFragment())
+            navigateToFragment(CustomViewDemoXmlFragment())
         }
         binding.btnStatefulButtonCompose.setOnClickListener {
-            navigateToFragment(ButtonComposeFragment())
+            navigateToFragment(CustomViewDemoComposeFragment())
         }
         binding.btnInteropXml.setOnClickListener {
             navigateToFragment(InteropXmlFragment())

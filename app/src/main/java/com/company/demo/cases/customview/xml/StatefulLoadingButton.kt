@@ -1,10 +1,10 @@
-package com.company.demo.cases.button.xml
+package com.company.demo.cases.customview.xml
 
 import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.widget.FrameLayout
-import com.company.demo.cases.button.mvi.ButtonState
+import com.company.demo.cases.customview.mvi.CustomViewDemoState
 import com.company.demo.databinding.ViewStatefulLoadingButtonBinding
 
 /**
@@ -24,23 +24,23 @@ class StatefulLoadingButton @JvmOverloads constructor(
     )
 
     // 更新狀態與內容的方法
-    fun setState(state: ButtonState, text: String) {
+    fun setState(state: CustomViewDemoState, text: String) {
         binding.tvBtnText.text = text
         
-        val isIdle = state == ButtonState.Idle
+        val isIdle = state == CustomViewDemoState.Idle
         binding.btnCardSubmit.isEnabled = isIdle
         binding.btnCardSubmit.alpha = if (isIdle) 1.0f else 0.6f
 
         when (state) {
-            is ButtonState.Idle -> {
+            is CustomViewDemoState.Idle -> {
                 binding.progressLoading.visibility = GONE
                 binding.imgSuccess.visibility = GONE
             }
-            is ButtonState.Loading -> {
+            is CustomViewDemoState.Loading -> {
                 binding.progressLoading.visibility = VISIBLE
                 binding.imgSuccess.visibility = GONE
             }
-            is ButtonState.Success -> {
+            is CustomViewDemoState.Success -> {
                 binding.progressLoading.visibility = GONE
                 binding.imgSuccess.visibility = VISIBLE
             }

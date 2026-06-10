@@ -1,4 +1,4 @@
-package com.company.demo.cases.button.xml
+package com.company.demo.cases.customview.xml
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,22 +7,22 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
-import com.company.demo.cases.button.mvi.ButtonViewModel
-import com.company.demo.databinding.FragmentButtonDemoXmlBinding
+import com.company.demo.cases.customview.mvi.CustomViewDemoViewModel
+import com.company.demo.databinding.FragmentCustomViewDemoXmlBinding
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
-class ButtonXmlFragment : Fragment() {
+class CustomViewDemoXmlFragment : Fragment() {
 
-    private lateinit var binding: FragmentButtonDemoXmlBinding
-    private val viewModel: ButtonViewModel by viewModels()
+    private lateinit var binding: FragmentCustomViewDemoXmlBinding
+    private val viewModel: CustomViewDemoViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentButtonDemoXmlBinding.inflate(inflater, container, false)
+        binding = FragmentCustomViewDemoXmlBinding.inflate(inflater, container, false)
         return binding.root
     }
 

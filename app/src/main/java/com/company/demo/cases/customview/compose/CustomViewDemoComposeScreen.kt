@@ -1,4 +1,4 @@
-package com.company.demo.cases.button.compose
+package com.company.demo.cases.customview.compose
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
@@ -17,8 +17,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.company.demo.cases.button.mvi.ButtonState
-import com.company.demo.cases.button.mvi.ButtonUiState
+import com.company.demo.cases.customview.mvi.CustomViewDemoState
+import com.company.demo.cases.customview.mvi.CustomViewDemoUiState
 
 /**
  * 宣告式的可重複使用 Composable 元件 (Reusable Composable Function)
@@ -27,21 +27,21 @@ import com.company.demo.cases.button.mvi.ButtonUiState
  */
 @Composable
 fun StatefulLoadingButton(
-    state: ButtonState,
+    state: CustomViewDemoState,
     text: String,
     onClick: () -> Unit,
     modifier: Modifier = Modifier
 ) {
     Button(
         onClick = onClick,
-        enabled = state == ButtonState.Idle,
+        enabled = state == CustomViewDemoState.Idle,
         modifier = modifier
     ) {
         Row(
             verticalAlignment = Alignment.CenterVertically
         ) {
             when (state) {
-                is ButtonState.Loading -> {
+                is CustomViewDemoState.Loading -> {
                     CircularProgressIndicator(
                         color = androidx.compose.material3.LocalContentColor.current,
                         modifier = Modifier.size(16.dp),
@@ -49,7 +49,7 @@ fun StatefulLoadingButton(
                     )
                     Spacer(modifier = Modifier.width(8.dp))
                 }
-                is ButtonState.Success -> {
+                is CustomViewDemoState.Success -> {
                     Icon(
                         imageVector = Icons.Default.Check,
                         contentDescription = null,
@@ -57,7 +57,7 @@ fun StatefulLoadingButton(
                     )
                     Spacer(modifier = Modifier.width(8.dp))
                 }
-                is ButtonState.Idle -> {
+                is CustomViewDemoState.Idle -> {
                     // 不需要額外圖示
                 }
             }
@@ -67,8 +67,8 @@ fun StatefulLoadingButton(
 }
 
 @Composable
-fun ButtonComposeScreen(
-    uiState: ButtonUiState,
+fun CustomViewDemoComposeScreen(
+    uiState: CustomViewDemoUiState,
     onClick: () -> Unit
 ) {
     Box(

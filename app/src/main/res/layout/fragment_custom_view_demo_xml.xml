@@ -4,8 +4,8 @@
     android:layout_height="match_parent"
     android:padding="16dp">
 
-    <!-- 呼叫自訂的模組化 StatefulLoadingButton 元件 -->
-    <com.company.demo.cases.button.xml.StatefulLoadingButton
+    <!-- 呼叫自訂的模組化 Custom View 元件 -->
+    <com.company.demo.cases.customview.xml.StatefulLoadingButton
         android:id="@+id/loadingButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

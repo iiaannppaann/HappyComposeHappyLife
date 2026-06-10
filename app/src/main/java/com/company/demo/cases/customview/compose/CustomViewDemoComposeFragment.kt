@@ -1,4 +1,4 @@
-package com.company.demo.cases.button.compose
+package com.company.demo.cases.customview.compose
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,11 +9,11 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.platform.ComposeView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import com.company.demo.cases.button.mvi.ButtonViewModel
+import com.company.demo.cases.customview.mvi.CustomViewDemoViewModel
 
-class ButtonComposeFragment : Fragment() {
+class CustomViewDemoComposeFragment : Fragment() {
 
-    private val viewModel: ButtonViewModel by viewModels()
+    private val viewModel: CustomViewDemoViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -23,7 +23,7 @@ class ButtonComposeFragment : Fragment() {
         return ComposeView(requireContext()).apply {
             setContent {
                 val uiState by viewModel.uiState.collectAsState()
-                ButtonComposeScreen(
+                CustomViewDemoComposeScreen(
                     uiState = uiState,
                     onClick = { viewModel.submit() }
                 )
