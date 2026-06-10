@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
-import com.company.demo.cases.button.mvi.ButtonState
 import com.company.demo.cases.button.mvi.ButtonViewModel
 import com.company.demo.databinding.FragmentButtonDemoXmlBinding
 import kotlinx.coroutines.flow.collectLatest
@@ -30,37 +29,15 @@ class ButtonXmlFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // 點擊事件綁定至自訂圓角卡片
-        binding.btnCardSubmit.setOnClickListener {
+        // 點擊事件綁定至自訂視圖
+        binding.loadingButton.setOnClickListener {
             viewModel.submit()
         }
 
-        // 觀察 MVI 狀態流，以指令式方式更新自訂圓角按鈕與內部元件
+        // 觀察 MVI 狀態流，同步更新自訂視圖狀態
         viewLifecycleOwner.lifecycleScope.launch {
             viewModel.uiState.collectLatest { state ->
-                binding.tvBtnText.text = state.text
-                
-                // 設定點擊啟用狀態與視覺不透明度 (Disabled style feedback)
-                val isIdle = state.state == ButtonState.Idle
-                binding.btnCardSubmit.isEnabled = isIdle
-                binding.btnCardSubmit.alpha = if (isIdle) 1.0f else 0.6f
-
-                when (state.state) {
-                    is ButtonState.Idle -> {
-                        binding.progressLoading.visibility = View.GONE
-                        binding.imgSuccess.visibility = View.GONE
-                    }
-                    is ButtonState.Loading -> {
-                        // 進度圈與文字皆位於卡片圓角背景內部
-                        binding.progressLoading.visibility = View.VISIBLE
-                        binding.imgSuccess.visibility = View.GONE
-                    }
-                    is ButtonState.Success -> {
-                        // 成功圖示與文字皆位於卡片圓角背景內部
-                        binding.progressLoading.visibility = View.GONE
-                        binding.imgSuccess.visibility = View.VISIBLE
-                    }
-                }
+                binding.loadingButton.setState(state.state, state.text)
             }
         }
     }
