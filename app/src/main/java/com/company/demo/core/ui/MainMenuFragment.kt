@@ -14,6 +14,12 @@ import com.company.demo.cases.form.compose.FormDemoComposeFragment
 import com.company.demo.cases.form.xml.FormDemoXmlFragment
 import com.company.demo.cases.multitype.compose.MultiTypeComposeFragment
 import com.company.demo.cases.multitype.xml.MultiTypeXmlFragment
+import com.company.demo.cases.button.compose.ButtonComposeFragment
+import com.company.demo.cases.button.xml.ButtonXmlFragment
+import com.company.demo.cases.interop.compose.InteropComposeFragment
+import com.company.demo.cases.interop.xml.InteropXmlFragment
+import com.company.demo.cases.tabs.compose.TabsComposeFragment
+import com.company.demo.cases.tabs.xml.TabsXmlFragment
 import com.company.demo.core.DemoCase
 import com.company.demo.databinding.FragmentMainMenuBinding
 
@@ -57,27 +63,29 @@ class MainMenuFragment : Fragment() {
         binding.btnMultiTypeCompose.setOnClickListener {
             navigateToFragment(MultiTypeComposeFragment())
         }
-        binding.cardStatefulButton.setOnClickListener {
-            navigateToCase(DemoCase.STATEFUL_BUTTON_COMPOSE)
+        binding.btnStatefulButtonXml.setOnClickListener {
+            navigateToFragment(ButtonXmlFragment())
         }
-        binding.cardInterop.setOnClickListener {
-            navigateToCase(DemoCase.INTEROP_COMPOSE_IN_XML)
+        binding.btnStatefulButtonCompose.setOnClickListener {
+            navigateToFragment(ButtonComposeFragment())
         }
-        binding.cardClassic.setOnClickListener {
-            navigateToCase(DemoCase.CLASSIC_TABS)
+        binding.btnInteropXml.setOnClickListener {
+            navigateToFragment(InteropXmlFragment())
+        }
+        binding.btnInteropCompose.setOnClickListener {
+            navigateToFragment(InteropComposeFragment())
+        }
+        binding.btnClassicXml.setOnClickListener {
+            navigateToFragment(TabsXmlFragment())
+        }
+        binding.btnClassicCompose.setOnClickListener {
+            navigateToFragment(TabsComposeFragment())
         }
     }
 
     private fun navigateToFragment(fragment: Fragment) {
         parentFragmentManager.beginTransaction()
             .replace(R.id.container, fragment)
-            .addToBackStack(null)
-            .commit()
-    }
-
-    private fun navigateToCase(demoCase: DemoCase) {
-        parentFragmentManager.beginTransaction()
-            .replace(R.id.container, CaseContainerFragment.newInstance(demoCase))
             .addToBackStack(null)
             .commit()
     }

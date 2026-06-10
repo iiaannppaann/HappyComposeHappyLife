@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:padding="16dp">
+
+    <!-- 傳統 XML 視圖元件 -->
+    <TextView
+        android:id="@+id/tvXmlTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="這是傳統 XML/View 畫面元件" />
+
+    <TextView
+        android:id="@+id/tvXmlCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="當前計數值: 0" />
+
+    <Button
+        android:id="@+id/btnXmlIncrement"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="點我 (XML 視圖按鈕)" />
+
+    <!-- 內嵌於 XML 中的 Compose 容器區塊 -->
+    <androidx.compose.ui.platform.ComposeView
+        android:id="@+id/composeViewContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp" />
+
+</LinearLayout>
