@@ -47,6 +47,11 @@
 * **XML 版本**：使用 `ViewPager2` 搭配 `TabLayout` 與 `TabLayoutMediator`，並依然需要撰寫一個 `RecyclerView.Adapter` 才能讓三個分頁滑動。
 * **Compose 版本**：使用官方內建的 `HorizontalPager` 與 `TabRow`，直接透過 `pagerState.animateScrollToPage` 與 `LaunchedEffect` 連動，邏輯清晰且零 Adapter 樣板程式碼。
 
+### Case 8: Scroll-Aware App Bar (捲動連動頂部列)
+展示個人主頁中常見的「滑過封面區域後，頂部浮現名稱與關注按鈕」的視覺互動：
+* **XML 版本**：必須手動對 `RecyclerView` 加上 `OnScrollListener`，取得 `layoutManager.findFirstVisibleItemPosition()` 來判斷頭像區是否還在畫面上，接著「手動呼叫」`animate().alpha(1f)` 與控制 View 的 `Visibility` 狀態。這是極其典型的指令式寫法，一旦滑動過快或資料重置，極易產生閃爍與狀態脫鉤的 Bug。
+* **Compose 版本**：完美展現「**狀態推導 (Derived State)**」的威力！只需宣告 `val showTopBar by remember { derivedStateOf { listState.firstVisibleItemIndex > 0 } }`，接著用 `AnimatedVisibility(visible = showTopBar)` 包覆 Top Bar。這行宣告完全取代了所有的捲動監聽與動畫控制，UI 永遠 100% 同步於狀態，優雅且不會出錯。
+
 ---
 
 ## 🎁 Bonus: Airbnb Showkase Explorer

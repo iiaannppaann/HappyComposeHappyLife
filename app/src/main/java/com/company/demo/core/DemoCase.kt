@@ -46,11 +46,15 @@ enum class DemoCase(val title: String, val description: String) {
         "Embedding legacy Android Custom Views inside a Compose screen"
     ),
     INTEROP_COMPOSE_IN_XML(
-        "Compose in XML (Interop)", 
+        "Interoperability (Compose in XML)", 
         "Incrementally adding a ComposeView inside a traditional XML screen"
     ),
     CLASSIC_TABS(
         "Tabs & ViewPager (Compose)", 
         "The classic ViewPager + TabLayout pattern built effortlessly in Compose"
+    ),
+    SCROLL_APP_BAR(
+        "Scroll-Aware App Bar",
+        "Contrasting imperative scroll listeners with declarative state-driven visibility animations"
     )
 }
