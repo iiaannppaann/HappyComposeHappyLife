@@ -52,6 +52,11 @@
 * **XML 版本**：必須手動對 `RecyclerView` 加上 `OnScrollListener`，取得 `layoutManager.findFirstVisibleItemPosition()` 來判斷頭像區是否還在畫面上，接著「手動呼叫」`animate().alpha(1f)` 與控制 View 的 `Visibility` 狀態。這是極其典型的指令式寫法，一旦滑動過快或資料重置，極易產生閃爍與狀態脫鉤的 Bug。
 * **Compose 版本**：完美展現「**狀態推導 (Derived State)**」的威力！只需宣告 `val showTopBar by remember { derivedStateOf { listState.firstVisibleItemIndex > 0 } }`，接著用 `AnimatedVisibility(visible = showTopBar)` 包覆 Top Bar。這行宣告完全取代了所有的捲動監聽與動畫控制，UI 永遠 100% 同步於狀態，優雅且不會出錯。
 
+### Case 9: Slot & Composition API (元件插槽與組合)
+探討「複合型佈局元件 (Compound Layout Components)」的擴充能力與彈性：
+* **XML 版本**：為了達成可自訂底部動作區（Slot）的卡片，必須在共通佈局中建立一個 `FrameLayout` 容器，接著在 Fragment 內透過程式碼手動 `LayoutInflater.inflate` 不同的 View、處理多重 View ID 管理、手動處理複雜排版，甚至要手動管理 `ValueAnimator` 來達成斑馬線動畫效果。這會導致 Fragment 充斥大量指令式視圖控制的樣板程式碼，難以維護與重用。
+* **Compose 版本**：僅需傳入一個極度優雅的 `ctaRow: @Composable () -> Unit` 函式。無論外面想要塞入置中單一按鈕、多重對齊按鈕、靜態斑馬線、甚至是包含 `LaunchedEffect` 與 `rememberScrollState` 的無限自定義捲動動畫，皆能在不更改卡片主體實作的前提下完美抽換，展現了宣告式 UI 「組合重於繼承」的極致威力。
+
 ---
 
 ## 🎁 Bonus: Airbnb Showkase Explorer

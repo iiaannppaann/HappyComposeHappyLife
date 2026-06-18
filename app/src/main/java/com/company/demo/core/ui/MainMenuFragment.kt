@@ -22,6 +22,8 @@ import com.company.demo.cases.tabs.compose.TabsComposeFragment
 import com.company.demo.cases.tabs.xml.TabsXmlFragment
 import com.company.demo.cases.scrollappbar.compose.ScrollAppBarComposeFragment
 import com.company.demo.cases.scrollappbar.xml.ScrollAppBarXmlFragment
+import com.company.demo.cases.slot_and_composition.compose.SlotCompositionComposeFragment
+import com.company.demo.cases.slot_and_composition.xml.SlotCompositionXmlFragment
 import com.company.demo.core.DemoCase
 import com.company.demo.databinding.FragmentMainMenuBinding
 import com.company.demo.getBrowserIntent
@@ -90,6 +92,12 @@ class MainMenuFragment : Fragment() {
         }
         binding.btnScrollAppBarCompose.setOnClickListener {
             navigateToFragment(ScrollAppBarComposeFragment())
+        }
+        binding.btnSlotCompositionXml.setOnClickListener {
+            navigateToFragment(SlotCompositionXmlFragment())
+        }
+        binding.btnSlotCompositionCompose.setOnClickListener {
+            navigateToFragment(SlotCompositionComposeFragment())
         }
         binding.btnLaunchShowkase.setOnClickListener {
             val intent = Showkase.getBrowserIntent(requireContext())

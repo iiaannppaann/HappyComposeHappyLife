@@ -466,6 +466,62 @@
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
+        <!-- Case 9 Card: Slot & Composition -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardSlotComposition"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="8dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="@color/white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Slot &amp; Composition API" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Demonstrating Compose flexible lambda slots vs painful XML view injection and hierarchy nesting" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="12dp"
+                    android:gravity="end">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnSlotCompositionXml"
+                        style="@style/Widget.Material3.Button.OutlinedButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="XML Version"
+                        android:textSize="12sp"/>
+
+                    <View
+                        android:layout_width="8dp"
+                        android:layout_height="match_parent"/>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnSlotCompositionCompose"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Compose Version"
+                        android:textSize="12sp"/>
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
         <!-- Bonus: Airbnb Showkase -->
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/cardShowkase"
